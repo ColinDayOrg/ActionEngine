@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "name": "PlayArea",
+      "client": {
+        "width": 960,
+        "height": 640,
+        "xBase": 25,
+        "yBase": 30
+      }
+    },
+    {
+      "name": "HexSpace",
+      "client": {
+        "size": 50,
+        "baseColor": "[0xFF,0xA5,0x00]",
+        "hoverColor": "[0x00,0x00,0xFF]",
+        "selectableColor": "[0xFF,0xBB,0x00]",
+        "outlineColor": "[0x00,0x00,0x00]",
+        "borderColor": "[0xFF,0xFF,0xFF]",
+        "tintColor": "[0x00,0x16,0x00]",
+        "outlineWidth": 0.2,
+        "borderWidth": 0.1
+      }
+    },
+    {
+      "name": "Player",
+      "client": {
+        "colors": [
+          "[0xFF,0x00,0x00]",
+          "[0x00,0x80,0x00]",
+          "[0xFF,0xFF,0x00]"
+        ],
+        "outlineColor": "[0x00,0x00,0x00]",
+        "borderColor": "[0xFF,0xFF,0xFF]",
+        "selectionSize": 0.5
+      } 
+    },
+    {
+      "name": "Arrow",
+      "client": {
+        "fillColor": "[0xFF,0xFF,0xFF]",
+        "edgeColor": "[0x00,0x00,0x00]",
+        "lineWidth": 0.2,
+        "width": 8,
+        "startOffset": 35,
+        "arrowHeadOffset": 20,
+        "arrowHeadWidth": 8
+      }
+    },
+    {
+      "name": "PathArrow",
+      "client": {
+        "segmentOffset": 15,
+        "dotSize": 5
+      }
+    },
+    {
+      "name": "Bullet",
+      "client": {
+        "size": 10,
+        "velocity": 750
+      }
+    },
+    {
+      "name": "movePiece",
+      "client": {
+        "to": "$PathArrow"
+      }
+    }
+  ]
+}

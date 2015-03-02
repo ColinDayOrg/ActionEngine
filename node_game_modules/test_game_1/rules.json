@@ -1,0 +1,65 @@
+{
+  "do": [
+    {
+      "action": "players",
+      "number": 2
+    },
+    {
+      "action": "selectPlayer",
+      "type": "random"
+    },
+    {
+      "action": "grid",
+      "x": 10,
+      "y": 7,
+      "type": "HexSpace",
+      "layout": "HexLayout",
+      "topology": "HexGrid"
+    },
+    {
+      "action": "loop",
+      "count": 1,
+      "do": {
+        "action": "loop",
+        "count": "numPlayers",
+        "do": {
+          "action": "select",
+          "type": "HexSpace",
+          "condition": "empty",
+          "do": {
+            "action": "placePiece",
+            "type": "Player",
+            "player": "current"
+          }
+        },
+        "after": "nextPlayer"
+      }
+    },
+    {
+      "action": "loop",
+      "do": {
+        "action": "movePiece",
+        "piece": {
+          "type": "Player",
+          "condition": "currentPlayer"
+        },
+        "connector": "PathArrow",
+        "to": {
+          "type": "HexSpace",
+          "condition": "empty",
+          "distance": 2
+        },
+        "after": {
+          "action": "attack",
+          "target": {
+            "type": "Player",
+            "condition": "otherPlayer"
+          },
+          "connector": "Arrow",
+          "threat": "Bullet"
+        }
+      },
+      "after": "nextPlayer"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='http://cdn.html5quintus.com/v0.2.0/quintus-all.js')
+    script(src='/socket.io/socket.io.js')
+  body(onload="Socket.send.nextAction()" onkeydown="alert('key');")
+    p Welcome to QuintusTake39
+    script.
+<<structure>>
+      var Q = 
+        Quintus()
+          .include('Sprites, Scenes')
+          .setup(Structure.PlayArea);
+      var sceneName = 'main';
+      Q.scene(sceneName);
+      var quintusStage = Q.stageScene(sceneName);
+<<system>>
+<<components>>
